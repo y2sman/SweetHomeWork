@@ -1,2 +1,1 @@
-# SweetHomeWork
-괴제용
+For SweetChips's homework
