@@ -26,49 +26,11 @@ CODEGATE때 신나게 IDA로 분석만 하다가와서 이번엔 자신이 있�
 // POWEROFXX_easy_reversing.Form1
 
 [1번 의심]
-public string tpyrcde821SEA(string Input, string key)
-{
-	string result;
-	try
-	{
-		RijndaelManaged rijndaelManaged = new RijndaelManaged();
-		byte[] array = Convert.FromBase64String(Input);
-		byte[] bytes = Encoding.ASCII.GetBytes(key.Length.ToString());
-		PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(key, bytes);
-		ICryptoTransform transform = rijndaelManaged.CreateDecryptor(passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
-		MemoryStream memoryStream = new MemoryStream(array);
-		CryptoStream cryptoStream = new CryptoStream(memoryStream, transform, CryptoStreamMode.Read);
-		byte[] array2 = new byte[array.Length];
-		int count = cryptoStream.Read(array2, 0, array2.Length);
-		memoryStream.Close();
-		cryptoStream.Close();
-		string @string = Encoding.Unicode.GetString(array2, 0, count);
-		result = @string;
-	}
-	catch
-	{
-		result = "Invalid k3y..";
-	}
-	return result;
-}
+
+![alt tag](https://raw.githubusercontent.com/y2sman/SweetHomeWork/master/tree/2-10/easy_1.png)
 
 [2번 의심]
-// POWEROFXX_easy_reversing.Form1
-public string tpyrcen821SEA(string Input, string key)
-{
-	RijndaelManaged rijndaelManaged = new RijndaelManaged();
-	byte[] bytes = Encoding.Unicode.GetBytes(Input);
-	byte[] bytes2 = Encoding.ASCII.GetBytes(key.Length.ToString());
-	PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(key, bytes2);
-	ICryptoTransform transform = rijndaelManaged.CreateEncryptor(passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
-	MemoryStream memoryStream = new MemoryStream();
-	CryptoStream cryptoStream = new CryptoStream(memoryStream, transform, CryptoStreamMode.Write);
-	cryptoStream.Write(bytes, 0, bytes.Length);
-	cryptoStream.FlushFinalBlock();
-	byte[] inArray = memoryStream.ToArray();
-	memoryStream.Close();
-	cryptoStream.Close();
-	return Convert.ToBase64String(inArray);
-}
+
+![alt tag](https://raw.githubusercontent.com/y2sman/SweetHomeWork/master/tree/2-10/easy_2.png)
 
 이다. 어쨋든 비밀번호를 연산해야되는데, 인자로 string input / string key 해서 결과값을 내는 부분이 이 두 함수 밖에 없다.
