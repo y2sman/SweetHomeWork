@@ -27,7 +27,7 @@ CODEGATE때 신나게 IDA로 분석만 하다가와서 이번엔 자신이 있�
 
 [1번 의심]
 
-![alt tag](https://github.com/y2sman/SweetHomeWork/tree/master/2-10/img/easy_1.png)
+![alt tag](https://github.com/y2sman/SweetHomeWork/blob/master/2-10/img/easy_1.PNG)
 
 [2번 의심]
 
