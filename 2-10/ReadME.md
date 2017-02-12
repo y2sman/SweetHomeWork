@@ -33,4 +33,4 @@ CODEGATE때 신나게 IDA로 분석만 하다가와서 이번엔 자신이 있�
 
 ![alt tag](https://github.com/y2sman/SweetHomeWork/blob/master/2-10/img/easy_2.PNG)
 
-이다. 어쨋든 비밀번호를 연산해야되는데, 인자로 string input / string key 해서 결과값을 내는 부분이 이 두 함수 밖에 없다.
+이다. 어쨋든 비밀번호를 연산해야되는데, 인자로 string input / string key 해서 결과값을 내는 부분이 이 두 함수 밖에 없다. 사실 함수 자체가 몇개 없다. 그중에 연산(?)을 하는건 이 두개인것같다.
